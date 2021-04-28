@@ -4,5 +4,5 @@ import org.springframework.scheduling.annotation.Async;
 
 public interface DummyService2 {
 	@Async
-	void dummyService2();
+	void dummyService2() throws Exception;
 }

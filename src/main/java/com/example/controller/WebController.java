@@ -14,7 +14,7 @@ public class WebController {
 	private DummyService dummyService;
 
 	@RequestMapping("/")
-	public String index() {
+	public String dummyService() throws Exception {
 		dummyService.dummyService();
 		return "Greetings from Spring Boot!";
 	}

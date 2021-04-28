@@ -14,19 +14,20 @@ public class DummyService2Impl implements DummyService2 {
 	private DummyAdaptor dummyAdaptor;
 
 	@Override
-	public void dummyService2() {
+	public void dummyService2() throws Exception {
 		System.out.println("I am inside dummyService2");
 		System.out.println("Thread ID :::::::::" + Thread.currentThread().getId());
 		System.out.println("BannerId ::"+ DomainUtils.getBannerId());
-		dummy();
-	}
 
-
-	private void dummy() {
-		System.out.println("I am inside dummyService2->dummy");
-		System.out.println("Thread ID :::::::::" + Thread.currentThread().getId());
-		System.out.println("BannerId ::"+ DomainUtils.getBannerId());
+		// Invoking Async method , which will lose httpRequest parameters and header as servlet-container will
+		// destroy instance of request.
 		dummyAdaptor.dummyApiAdaptor();
+
+		// corrrect way to do this , pass information as parameter or POJO
+		dummyAdaptor.dummyApiAdaptor(DomainUtils.getBannerId());
 	}
+
+
+
 
 }

@@ -14,7 +14,7 @@ public class DummyServiceImpl implements DummyService {
 	private DummyService2 dummyService2;
 
 	@Override
-	public void dummyService() {
+	public void dummyService() throws Exception{
 		System.out.println("I am inside dummyService");
 		System.out.println("Thread ID :::::::::" + Thread.currentThread().getId());
 		System.out.println("BannerId ::"+ DomainUtils.getBannerId());

@@ -2,5 +2,7 @@ package com.example.adaptor;
 
 
 public interface DummyAdaptor {
-	void dummyApiAdaptor();
+	void dummyApiAdaptor() throws Exception;
+
+	void dummyApiAdaptor(String bannerId) throws Exception;
 }

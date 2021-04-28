@@ -1,5 +1,5 @@
 package com.example.service;
 
 public interface DummyService {
-	void dummyService();
+	void dummyService() throws Exception;
 }
